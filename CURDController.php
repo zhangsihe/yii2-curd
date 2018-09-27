@@ -1,6 +1,6 @@
 <?php
 
-namespace simplify\curd;
+namespace sihe\curd;
 
 use yii\web\Controller;
 use yii\data\ActiveDataProvider;

@@ -1,5 +1,5 @@
 {
-    "name": "helloword-zhangsihe/test",
+    "name": "sihe/yii2-curd",
     "description": "Yii2 simplify CURD",
     "keywords": ["yii2","curd","controller"],
     "license": "MIT",
@@ -17,7 +17,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "simplify\\curd\\": ""
+            "sihe\\curd\\": ""
         }
     }
 }
