@@ -1,0 +1,23 @@
+{
+    "name": "helloword-zhangsihe/test",
+    "description": "Yii2 simplify CURD",
+    "keywords": ["yii2","curd","controller"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "type": "yii2-extension",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.5"
+    },
+    "authors": [
+        {
+            "name": "Zhang Zuoming",
+            "email": "1611729317@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "simplify\\curd\\": ""
+        }
+    }
+}
