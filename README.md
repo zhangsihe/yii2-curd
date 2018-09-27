@@ -1,6 +1,6 @@
 # CURD类库说明文档
 
-CURDController继承自XPController控制器，该控制器集成了增删改查通用方法，新的功能板块只需要继承该控制器进行实例化并覆盖CURD类的
+CURDController继承自Controller控制器，该控制器集成了增删改查通用方法，新的功能板块只需要继承该控制器进行实例化并覆盖CURD类的
 model属性以及一系列的配置后既可以以最少的控制器代码实现增删改查功能。
 
 - - -

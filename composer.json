@@ -1,7 +1,7 @@
 {
     "name": "sihe/yii2-curd",
     "description": "Yii2 simplify CURD",
-    "keywords": ["yii2","curd","controller"],
+    "keywords": ["yii2","curd","controller","CURD","sihe"],
     "license": "MIT",
     "minimum-stability": "dev",
     "type": "yii2-extension",
