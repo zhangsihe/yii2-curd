@@ -1,7 +1,32 @@
 # CURD类库说明文档
 
-CURDController继承自Controller控制器，该控制器集成了增删改查通用方法，新的功能板块只需要继承该控制器进行实例化并覆盖CURD类的
+CURDController继承自Controller控制器，为后台开发定制而产生，减少重复和垃圾代码。该控制器集成了增删改查通用方法，新的功能板块只需要继承该控制器进行实例化并覆盖CURD类的
 model属性以及一系列的配置后既可以以最少的控制器代码实现增删改查功能。
+
+示例：
+    
+    <?php
+    
+    namespace app\controllers;
+    
+    use app\models\Admin;
+    use sihe\curd\CURDController;
+    
+    class TestController extends CURDController
+    {
+        public function initSetConfig()
+        {
+            $this->model = new Admin();
+            $this->selectConfig = [
+                'screen'   => true,
+                'pageSize' => 20,
+            ];
+        }
+    }
+    
+上述极少的代码即完成了增删除改查。如果不希望某项方法被使用覆盖对应方法即可。Yii2的灵活性多数数
+据操作都可以在model中完成，比如beforeSave、afterSave、afterDelete等方法中完成，搭配着使用本类
+可以大幅度提高工程速度，工程师多数只需要关注view层面。
 
 - - -
 
@@ -43,10 +68,6 @@ initSetConfig()
     class BannerController extends CURDController
     {
     
-        protected $createLogDesc = '盒子-Banner管理-新增';
-        protected $updateLogDesc = '盒子-Banner管理-更新';
-        protected $deleteLogDesc = '盒子-Banner管理-删除';
-    
         public function initSetConfig()
         {
             $this->model = new BoxBanner();
@@ -68,9 +89,6 @@ initSetConfig()
                 'pageSize' => 20,
                 'screen'   => true
             ];
-            $this->createLogDesc         = '盒子-Banner管理-新增';
-            $this->updateLogDesc         = '盒子-Banner管理-更新';
-            $this->deleteLogDesc         = '盒子-Banner管理-删除';
             $this->editScenario          = 'edit';
             $this->createSuccessRedirect = 'user/index';
         }
@@ -81,16 +99,13 @@ initSetConfig()
 
     class BannerController extends CURDController
     {
-        protected $createLogDesc = '盒子-Banner管理-新增';
-        protected $updateLogDesc = '盒子-Banner管理-更新';
-        protected $deleteLogDesc = '盒子-Banner管理-删除';
         public $editScenario     = 'edit';
         public $createScenario   = 'create';
         public $selectScenario   = 'select';
     
         public function initSetConfig()
         {
-            $this->model = new BoxBanner(); // 示例化数据model是一定要在initSetConfig()中完成的
+            $this->model = new BoxBanner(); // 实例化数据model是一定要在initSetConfig()中完成的
         }
     
     }

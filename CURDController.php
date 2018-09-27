@@ -92,8 +92,6 @@ abstract class CURDController extends Controller
 
         $this->beforeDelete($model);
 
-        $office_copy = $model->find()->where(['id' => $id])->asArray()->one();
-
         if (!empty($data)) {
             if ($data->delete()) {
                 Yii::$app->session->setFlash('success', '删除成功');
@@ -101,7 +99,7 @@ abstract class CURDController extends Controller
                 Yii::$app->session->setFlash('error', '删除失败'.(empty($data->firstErrors[array_rand($data->firstErrors)]) ? '' : ':'.$data->firstErrors[array_rand($data->firstErrors)]));
             }
         }
-        $this->redirect($this->goBack('index'));
+        $this->redirect($this->myGoBack('index'));
     }
 
     public function actionCreate()
