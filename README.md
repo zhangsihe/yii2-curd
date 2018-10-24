@@ -329,4 +329,4 @@ public $editConfig
 
 protected $createSuccessRedirect
 -------------------------
-> 设置添加成功后跳转的路径，默认跳转不跳转。
+> 设置添加成功后跳转的路径，默认跳转本页。
